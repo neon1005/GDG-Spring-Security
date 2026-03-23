@@ -13,3 +13,7 @@ Spring 환경 인증/인가 담당 -> Spring Security(건물 보안 시스템)
 4. UserDetailsService  
 이후 인가
 
+
+Record: 기본적으로 필드값이 바뀌지 않는 불변 객체이며, 메서드나 생성자를 자동으로 만들어줘서 간결하고 효율적인 데이터 객체를 만들 수 있다.
+즉, 계층간 데이터 교환을 위해 사용하는 객체인 DTO(Data Transfer Object)를 만드는데 특화되어있는 클래스 타입이다.
+
