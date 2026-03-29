@@ -26,14 +26,14 @@ public class MemberService {
     @Transactional
     public void createMember(MemberCreateRequest request) {
 
-        boolean isDuplicate = memberRepository.existsByUsername(request.getUsername());//겹치는지 안겹치는지 확인
+        boolean isDuplicate = memberRepository.existsByUsername(request.username());//겹치는지 안겹치는지 확인
 
         // 중복되는 유저네임이 있으면 에러
         if (isDuplicate) {
             throw new CustomException(MEMBER_USERNAME_DUPLICATE);
         }
 
-        Member member = new Member(request.getUsername(), request.getPassword());
+        Member member = new Member(request.username(), request.password());
 
         // 멤버를 저장한다
         memberRepository.save(member);
@@ -75,7 +75,7 @@ public class MemberService {
 
 
         // 해당하는 멤버 정보를 갱신한다
-        member.updateUsername(request.getUsername());
+        member.updateUsername(request.username());
 
     }
 
