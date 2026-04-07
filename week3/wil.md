@@ -14,5 +14,30 @@ Header(alg, typ) . Payload(claims(sub, name, iat)) . Signature
   
 Header - 어떤 알고리즘으로 서명되었는가?  
 payload - 사용자 정보  
-Signature - Header/Payload 를 비밀키로 서명한 값  
-GDG 6:33부터 ..
+Signature - Header/Payload 를 비밀키로 서명한 값, 변조되었는지 확인 가능  
+  
+JWT로 사용자 구분하는 방식  
+사용자는 요청마다 토큰을 함께보냄.  
+이때 서버는  
+1. 토큰을 꺼냄   
+2. 토큰을 파싱(헤더와 페이로드 디코드)  
+3. 변조 여부 확인(시그니쳐, 비밀키 일치)  
+4. 토큰에서 사용자 정보 꺼냄  
+  
+JWT 주의사항  
+유효시간(만료시간)을 지정해줘야 한다.   
+토큰 안에 비밀번호를 저장하면 안된다.   
+  
+로그인 구현  
+1. 로그인 요청을 authToken으로 변환  
+2. AuthenticationManager 로 인증  
+   -> 1번의 객체로 인증 시도  
+   -> 실패시 AuthenticationException  
+3. 인증 정보를 토대로 토큰을 발급  
+4. 토큰을 클라이언트에 전달
+
+GDG 13:00 부터..
+
+
+
+
