@@ -32,11 +32,35 @@ JWT 주의사항
 1. 로그인 요청을 authToken으로 변환  
 2. AuthenticationManager 로 인증  
    -> 1번의 객체로 인증 시도  
-   -> 실패시 AuthenticationException  
+   -> 실패시 AuthenticationException    
 3. 인증 정보를 토대로 토큰을 발급  
-4. 토큰을 클라이언트에 전달
+4. 토큰을 클라이언트에 전달  
+  
++Authorization Header 로 JWT를 보낼 때 관례적으로 Bearer 를 붙이는지 이유  
+-> Bearer 뒤에 오는 헤더 값이 Bearer Token 방식의 인증 정보임을 나타내기 위해서이다.  
+-> 실제 인증에 사용할 토큰 값은 "Bearer " 다음부터이다.  
+-> 그래서 코드에서 substring(7)으로 앞의 7글자(Bearer )를 제외하여 실제 토큰 문자열만 꺼낸다.  
+  
+++정리 및 JWT의 보안상의 취약점  
+회원가입 기능 - Session 방식(클라이언트 요청마다 인증(입장권 - 세션 스토어) 확인) or Token 방식(입장권만 보고 판단)  
+  
+1. 헤더 "alg" : "none" 으로 공격  
+2. JWT는 DECODING이 매우 쉽다 -> 민감한 정보가 아닌 최소한의 정보만 저장  
+3. 시그니쳐 시크릿키 너무 단조롭게 설정하면 맞출 위험 증가  
+4. 클라이언트의 입장권 탈취 시 입장권 사용 정지시키기 쉽지 않다  
+   해결 방법:  
+   ->HttpOnly cookie 훔치기 어려운 저장소 운영  
+   ->입장권 블랙리스트 운영->Session과 비슷  
+   ->유효기간 짧게, Refresh Token Rotation 운영  
 
-GDG 31:45 부터..
+
+
+
+
+
+
+
+
 
 
 
