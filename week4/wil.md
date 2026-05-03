@@ -28,7 +28,7 @@ Scale Out 에서 세션 방식을 사용하고자 한다면,
 해결방법 3가지:  
 a. Sticky Session(특정 사용자 요청을 항상 같은 서버로) 트래픽이 몰리는 불균형이 생길 수 있다.  
 b. Session Clustering 서버 세션이 변경될 때 마다 서버간 세션 데이터 복제 - 서버 수가 늘어날 수록 트래픽 급증  
-c.External Session Storage 외부 세션 저장소 운영 - 관리 난이도가 높다  
+c. External Session Storage 외부 세션 저장소 운영 - 관리 난이도가 높다  
   
 #### 세션의 장점 #### 
 보안 위협 3가지:  
