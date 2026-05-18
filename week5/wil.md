@@ -79,8 +79,24 @@ OAuth2.0
 **OAuth2.0 편의성:**  
 사용자 입장 - 불필요한 회원가입 과정없고 기억해야할 비밀번호가 줄어든다, 잘 알려진 인증 주체를 통한 신뢰감 형성.  
 운영자 입장 - 가입 단계 단축, 보안 사고 책임 분산  
-  
-24:02 부터
+    
+**OAuth2.0 흐름:**  볼드체가 아닌 것은 SpringSecurity, Google 등에서 해주는 기능  
+**1.** 사용자가 Google로 로그인 클릭   
+2. 우리서버(OAuth Client)는 로그인 요청을 Google Auth Server로 Redirect  
+**3.** Auth Server는 사용자 브라우저를 Google 로그인 페이지로 Redirect    
+**4.** 사용자는 Google 로그인 화면에서 직접 로그인    
+**5.** Auth Server는 사용자를 우리 서버로 Redirect 이때 URL 파라미터 임시 Auth Code 발급(수명짧고 한 번 사용시 만료)  
+6. 우리 서버는 Auth Code로 Google Auth Server에 AT 요청  
+7. Auth Server 가 Auth Code 검증  
+8. Auth Server 가 우리 서버에 AT 발급  
+9. 우리 서버는 AT로 Google Resource Server에 사용자 정보 요청 - 이메일, 이름  
+10. Resource Server 는 사용자 프로필 정보 응답   
+**11.** 우리 서버는 해당 프로필 정보로 적잘한 인증 처리  
+    신규 유저라면 해당 사용자 생성  
+    기존 유저라면 토큰/세션 발급  
+
+<img width="500" height="528" alt="security" src="https://github.com/user-attachments/assets/b275c2a0-6570-4f25-9ac9-fbe758443b2b" />
+출처: [GDG Hongik] 스프링 시큐리티 스터디 5주차 (2026-1)
 
 
 
