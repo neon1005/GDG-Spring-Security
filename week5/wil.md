@@ -88,7 +88,7 @@ RT 재발급 처리에는 Stateful 하다.
 **3. Auth Server는 사용자 브라우저를 Google 로그인 페이지로 Redirect**    
 **4. 사용자는 Google 로그인 화면에서 직접 로그인**    
 **5. Auth Server는 사용자를 우리 서버로 Redirect. 이때, URL 파라미터 임시 Auth Code 발급(수명짧고 한 번 사용시 만료)**  
-6. 우리 서버는 Auth Code로 Google Auth Server에 AT 요청(client id, client secret, redirect uri 등을 함께 보냄)
+6. 우리 서버는 Auth Code로 Google Auth Server에 AT 요청(client id, client secret, redirect uri 등을 함께 보냄)  
 7. Auth Server 가 Auth Code 검증  
 8. Auth Server 가 우리 서버에 AT 발급  
 9. 우리 서버는 AT로 Google Resource Server에 사용자 정보 요청 - 이메일, 이름  
