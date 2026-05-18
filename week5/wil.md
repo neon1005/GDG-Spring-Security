@@ -95,7 +95,7 @@ OAuth2.0
     신규 유저라면 해당 사용자 생성  
     기존 유저라면 토큰/세션 발급  
 
-<img width="500" height="528" alt="security" src="https://github.com/user-attachments/assets/b275c2a0-6570-4f25-9ac9-fbe758443b2b" />
+<img width="500" height="528" alt="security" src="https://github.com/user-attachments/assets/b275c2a0-6570-4f25-9ac9-fbe758443b2b" />  
 출처: [GDG Hongik] 스프링 시큐리티 스터디 5주차 (2026-1)
 
 
