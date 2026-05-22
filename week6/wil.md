@@ -66,7 +66,7 @@ FilterChainProxy#doFilter()는 매칭되는 SecurityFilterChain을 선택하고 
 
 <br>
     
-**클라리언트 요청의 필터 통과 flow:**   
+**클라이언트 요청의 필터 통과 flow:**   
 클라이언트 요청이 들어와 Tomcat에 도착한다.  
 DelegatingFilterProxy 가 요청을 받아 doFilter()가 호출된다.  
   
