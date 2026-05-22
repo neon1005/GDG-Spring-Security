@@ -1,5 +1,5 @@
 **스프링 부트 실행 flow:**  
-SpringsecurityApplication 의 run()을 따라가보자.  
+SpringsecurityApplication.run()을 따라가보자.  
 ↓   
 WebServerApplicationContext 준비  
 ↓   
